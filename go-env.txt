@@ -1,0 +1,9 @@
+# exportar variables globales para poder utilizar los binarios instalados en golang
+
+nano ~/.profile
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOPATH/bin:/usr/local/go/bin
+. ~/.profile
+
+.zshrc
