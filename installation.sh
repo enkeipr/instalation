@@ -28,6 +28,8 @@ echo -e "${BCyan} sudo pacman -Syyuu --$y ${BYellow} <-- ${NC}"
 sudo pacman -Syyuu --$y
 echo -e "${BCyan} sudo pacman -S zsh --$y ${BYellow} <-- ${NC}"
 sudo pacman -S zsh --$y
+echo -e "${BCyan} sudo pacman -S zsh-autosuggestions --$y ${BYellow} <-- ${NC}"
+sudo pacman -S zsh-autosuggestions --$y
 echo -e "${BCyan} sudo pacman -S curl --$y ${BYellow} <-- ${NC}"
 sudo pacman -S curl --$y
 echo -e "${BCyan} sudo pacman -S git --$y ${BYellow} <-- ${NC}"
