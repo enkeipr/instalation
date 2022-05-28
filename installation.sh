@@ -11,7 +11,7 @@ echo +
 echo +
 echo +
 
-sudo pacman -Syyuu
+sudo pacman -Syyuu --$y
 sudo pacman -S zsh --$y
 sudo pacman -S curl --$y
 sudo pacman -S git --$y
