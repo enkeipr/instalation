@@ -82,3 +82,8 @@ echo -e "${BCyan} paru -S dbvisualizer --$y ${BYellow} <-- ${NC}"
 paru -S dbvis --$y
 echo -e "${BCyan} paru -S spotify --$y ${BYellow} <-- ${NC}"
 paru -S spotify --$y
+echo -e "${BCyan} O H  M Y  Z S H ${BYellow} <-- ${NC}"
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+echo -e "${BCyan} S P A C E  S H I P${BYellow} <-- ${NC}"
+git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
+ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
