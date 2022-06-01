@@ -44,7 +44,7 @@ echo -e "${BCyan} + @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ +"
 echo -e "${BCyan} ++++++++++++++++++++++++++++++++++++++++++++++"
 echo -e "${BYellow}   ||||||||||||||||||||||||||||||||||||||||||"
 echo ""
-# ---> Update de System
+# ---> Update the System
 echo -e "${BCyan} sudo pacman -Syyuu --$y ${BYellow} <-- ${NC}"
 sudo pacman -Syyuu --$y
 # ---> Install ZSH
