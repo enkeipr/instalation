@@ -44,32 +44,44 @@ echo -e "${BCyan} + @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ +"
 echo -e "${BCyan} ++++++++++++++++++++++++++++++++++++++++++++++"
 echo -e "${BYellow}   ||||||||||||||||||||||||||||||||||||||||||"
 echo ""
+# ---> Update de System
 echo -e "${BCyan} sudo pacman -Syyuu --$y ${BYellow} <-- ${NC}"
 sudo pacman -Syyuu --$y
-exit
+# ---> Install ZSH
 echo -e "${BCyan} sudo pacman -S zsh --$y ${BYellow} <-- ${NC}"
 sudo pacman -S zsh --$y
+# ---> Install ZSH-AUTOSUGGESTIONS
 echo -e "${BCyan} sudo pacman -S zsh-autosuggestions --$y ${BYellow} <-- ${NC}"
 sudo pacman -S zsh-autosuggestions --$y
+# ---> Install CURL
 echo -e "${BCyan} sudo pacman -S curl --$y ${BYellow} <-- ${NC}"
 sudo pacman -S curl --$y
+# ---> Install GIT
 echo -e "${BCyan} sudo pacman -S git --$y ${BYellow} <-- ${NC}"
 sudo pacman -S git --$y
+# ---> Install DOCKER
 echo -e "${BCyan} sudo pacman -S docker --$y ${BYellow} <-- ${NC}"
 sudo pacman -S docker --$y
+# ---> Install FIREFOX
 echo -e "${BCyan} sudo pacman -S firefox --$y ${BYellow} <-- ${NC}"
 sudo pacman -S firefox --$y
+# ---> Install VSCODE
 echo -e "${BCyan} sudo pacman -S code --$y ${BYellow} <-- ${NC}"
 sudo pacman -S code --$y
+# ---> Install GOLANG
 echo -e "${BCyan} sudo pacman -S go --$y ${BYellow} <-- ${NC}"
 sudo pacman -S go --$y
+# ---> Install GNOME-TWEAKS
 echo -e "${BCyan} sudo pacman -S gnome-tweaks --$y ${BYellow} <-- ${NC}"
 sudo pacman -S gnome-tweaks --$y
+# ---> Install PAPIRUS-ICONS
 echo -e "${BCyan} sudo pacman -S papirus-icon-theme --$y ${BYellow} <-- ${NC}"
 sudo pacman -S papirus-icon-theme --$y
+# ---> Install BASE-LEVEL
 echo -e "${BCyan} sudo pacman -S --needed base-devel ${BYellow} <-- ${NC}"
 sudo pacman -S --needed base-devel
 cd $HOME
+# ---> Install PARU
 echo -e "${BCyan} git clone https://aur.archlinux.org/paru.git ${BYellow} <-- ${NC}"
 git clone https://aur.archlinux.org/paru.git
 cd paru
@@ -78,12 +90,16 @@ makepkg -si --$y
 echo -e "${BCyan} paru --$y ${BYellow} <-- ${NC}"
 paru --$y
 cd ..
+# ---> Install DBVISUALIZER
 echo -e "${BCyan} paru -S dbvisualizer --$y ${BYellow} <-- ${NC}"
 paru -S dbvis --$y
+# ---> Install SPOTIFY
 echo -e "${BCyan} paru -S spotify --$y ${BYellow} <-- ${NC}"
 paru -S spotify --$y
+# ---> Install OH-MY-ZSH
 echo -e "${BCyan} O H  M Y  Z S H ${BYellow} <-- ${NC}"
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# ---> Install SPACESHIP
 echo -e "${BCyan} S P A C E  S H I P${BYellow} <-- ${NC}"
 git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
 ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
