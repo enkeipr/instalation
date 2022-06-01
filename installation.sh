@@ -63,6 +63,10 @@ echo -e "${BCyan} sudo pacman -S code --$y ${BYellow} <-- ${NC}"
 sudo pacman -S code --$y
 echo -e "${BCyan} sudo pacman -S go --$y ${BYellow} <-- ${NC}"
 sudo pacman -S go --$y
+echo -e "${BCyan} sudo pacman -S gnome-tweaks --$y ${BYellow} <-- ${NC}"
+sudo pacman -S gnome-tweaks --$y
+echo -e "${BCyan} sudo pacman -S papirus-icon-theme --$y ${BYellow} <-- ${NC}"
+sudo pacman -S papirus-icon-theme --$y
 echo -e "${BCyan} sudo pacman -S --needed base-devel ${BYellow} <-- ${NC}"
 sudo pacman -S --needed base-devel
 cd $HOME
@@ -73,4 +77,8 @@ echo -e "${BCyan} makepkg -si --$y ${BYellow} <-- ${NC}"
 makepkg -si --$y
 echo -e "${BCyan} paru --$y ${BYellow} <-- ${NC}"
 paru --$y
-# paru dbvisualizer
+cd ..
+echo -e "${BCyan} paru -S dbvisualizer --$y ${BYellow} <-- ${NC}"
+paru -S dbvis --$y
+echo -e "${BCyan} paru -S spotify --$y ${BYellow} <-- ${NC}"
+paru -S spotify --$y
