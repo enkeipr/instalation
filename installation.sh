@@ -45,6 +45,20 @@ echo -e "${BCyan} ++++++++++++++++++++++++++++++++++++++++++++++"
 echo -e "${BYellow}   ||||||||||||||||||||||||||||||||||||||||||"
 echo ""
 
+# ---> Install SPACESHIP
+sudo rm -rf /themes/spaceship.zsh-theme
+sudo rm -rf /themes/spaceship-prompt
+echo -e "${BCyan}   S P A C E  S H I P${BYellow} <------------------ ${NC}"
+sudo git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
+sudo ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
+# ---> Install OH-MY-ZSH
+rm -rf /home/ema/.oh-my-zsh
+echo -e "${BCyan}   O H  M Y  Z S H ${BYellow} <------------------ ${NC}"
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" --noconfirm
+# ---> Copy ZSH.CONF
+echo -e "${BCyan}   C O P Y  ZSH.CONF ${BYellow} <------------------ ${NC}"
+mv .zshrc ~/.zshrc
+exit
 
 # ---> Update the System
 echo -e "${BCyan}   sudo pacman -Syyuu $y ${BYellow} <------------------ ${NC}"
@@ -100,10 +114,3 @@ paru -S dbvis $y
 # ---> Install SPOTIFY
 echo -e "${BCyan}   paru -S spotify $y ${BYellow} <------------------ ${NC}"
 paru -S spotify $y
-# ---> Install OH-MY-ZSH
-echo -e "${BCyan}   O H  M Y  Z S H ${BYellow} <------------------ ${NC}"
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-# ---> Install SPACESHIP
-echo -e "${BCyan}   S P A C E  S H I P${BYellow} <------------------ ${NC}"
-git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
-ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
