@@ -12,7 +12,7 @@ BCyan='\033[1;36m'        # Cyan
 BWhite='\033[1;37m'       # White
 NC='\033[0m' # No Color
 
-y="noconfirm"
+y="--noconfirm"
 
 echo -e "${BCyan} ++++++++++++++++++++++++++++++++++++++++++++++"
 echo -e "${BCyan} +++++ Excecuting the installation script +++++"
@@ -44,62 +44,66 @@ echo -e "${BCyan} + @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ +"
 echo -e "${BCyan} ++++++++++++++++++++++++++++++++++++++++++++++"
 echo -e "${BYellow}   ||||||||||||||||||||||||||||||||||||||||||"
 echo ""
+
+
 # ---> Update the System
-echo -e "${BCyan} sudo pacman -Syyuu --$y ${BYellow} <-- ${NC}"
-sudo pacman -Syyuu --$y
+echo -e "${BCyan}   sudo pacman -Syyuu $y ${BYellow} <------------------ ${NC}"
+sudo pacman -Syyuu $y
 # ---> Install ZSH
-echo -e "${BCyan} sudo pacman -S zsh --$y ${BYellow} <-- ${NC}"
-sudo pacman -S zsh --$y
+echo -e "${BCyan}   sudo pacman -S zsh $y ${BYellow} <------------------ ${NC}"
+sudo pacman -S zsh $y
 # ---> Install ZSH-AUTOSUGGESTIONS
-echo -e "${BCyan} sudo pacman -S zsh-autosuggestions --$y ${BYellow} <-- ${NC}"
-sudo pacman -S zsh-autosuggestions --$y
+echo -e "${BCyan}   sudo pacman -S zsh-autosuggestions $y ${BYellow} <------------------ ${NC}"
+sudo pacman -S zsh-autosuggestions $y
 # ---> Install CURL
-echo -e "${BCyan} sudo pacman -S curl --$y ${BYellow} <-- ${NC}"
-sudo pacman -S curl --$y
+echo -e "${BCyan}   sudo pacman -S curl $y ${BYellow} <------------------ ${NC}"
+sudo pacman -S curl $y
 # ---> Install GIT
-echo -e "${BCyan} sudo pacman -S git --$y ${BYellow} <-- ${NC}"
-sudo pacman -S git --$y
+echo -e "${BCyan}   sudo pacman -S git $y ${BYellow} <------------------ ${NC}"
+sudo pacman -S git $y
 # ---> Install DOCKER
-echo -e "${BCyan} sudo pacman -S docker --$y ${BYellow} <-- ${NC}"
-sudo pacman -S docker --$y
+echo -e "${BCyan}   sudo pacman -S docker $y ${BYellow} <------------------ ${NC}"
+sudo pacman -S docker $y
 # ---> Install FIREFOX
-echo -e "${BCyan} sudo pacman -S firefox --$y ${BYellow} <-- ${NC}"
-sudo pacman -S firefox --$y
+echo -e "${BCyan}   sudo pacman -S firefox $y ${BYellow} <------------------ ${NC}"
+sudo pacman -S firefox $y
 # ---> Install VSCODE
-echo -e "${BCyan} sudo pacman -S code --$y ${BYellow} <-- ${NC}"
-sudo pacman -S code --$y
+echo -e "${BCyan}   sudo pacman -S code $y ${BYellow} <------------------ ${NC}"
+sudo pacman -S code $y
 # ---> Install GOLANG
-echo -e "${BCyan} sudo pacman -S go --$y ${BYellow} <-- ${NC}"
-sudo pacman -S go --$y
+echo -e "${BCyan}   sudo pacman -S go $y ${BYellow} <------------------ ${NC}"
+sudo pacman -S go $y
 # ---> Install GNOME-TWEAKS
-echo -e "${BCyan} sudo pacman -S gnome-tweaks --$y ${BYellow} <-- ${NC}"
-sudo pacman -S gnome-tweaks --$y
+echo -e "${BCyan}   sudo pacman -S gnome-tweaks $y ${BYellow} <------------------ ${NC}"
+sudo pacman -S gnome-tweaks $y
 # ---> Install PAPIRUS-ICONS
-echo -e "${BCyan} sudo pacman -S papirus-icon-theme --$y ${BYellow} <-- ${NC}"
-sudo pacman -S papirus-icon-theme --$y
+echo -e "${BCyan}   sudo pacman -S papirus-icon-theme $y ${BYellow} <------------------ ${NC}"
+sudo pacman -S papirus-icon-theme $y
 # ---> Install BASE-LEVEL
-echo -e "${BCyan} sudo pacman -S --needed base-devel ${BYellow} <-- ${NC}"
+echo -e "${BCyan}   sudo pacman -S --needed base-devel ${BYellow} <------------------ ${NC}"
 sudo pacman -S --needed base-devel
-cd $HOME
+
 # ---> Install PARU
-echo -e "${BCyan} git clone https://aur.archlinux.org/paru.git ${BYellow} <-- ${NC}"
-git clone https://aur.archlinux.org/paru.git
-cd paru
-echo -e "${BCyan} makepkg -si --$y ${BYellow} <-- ${NC}"
-makepkg -si --$y
-echo -e "${BCyan} paru --$y ${BYellow} <-- ${NC}"
-paru --$y
-cd ..
+echo -e "${BCyan}   git clone https://aur.archlinux.org/paru.git /tmp/paru ${BYellow} <------------------ ${NC}"
+git clone https://aur.archlinux.org/paru.git /tmp/paru
+cd /tmp/paru
+echo -e "${BCyan}   makepkg -si $y ${BYellow} <------------------ ${NC}"
+makepkg -si $y
+echo -e "${BCyan}   rm -rf /tmp/paru ${BYellow} <------------------ ${NC}"
+rm -rf /tmp/paru
+# ---> Update PARU
+echo -e "${BCyan}   paru ${BYellow} <------------------ ${NC}"
+paru
 # ---> Install DBVISUALIZER
-echo -e "${BCyan} paru -S dbvisualizer --$y ${BYellow} <-- ${NC}"
-paru -S dbvis --$y
+echo -e "${BCyan}   paru -S dbvisualizer $y ${BYellow} <------------------ ${NC}"
+paru -S dbvis $y
 # ---> Install SPOTIFY
-echo -e "${BCyan} paru -S spotify --$y ${BYellow} <-- ${NC}"
-paru -S spotify --$y
+echo -e "${BCyan}   paru -S spotify $y ${BYellow} <------------------ ${NC}"
+paru -S spotify $y
 # ---> Install OH-MY-ZSH
-echo -e "${BCyan} O H  M Y  Z S H ${BYellow} <-- ${NC}"
+echo -e "${BCyan}   O H  M Y  Z S H ${BYellow} <------------------ ${NC}"
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 # ---> Install SPACESHIP
-echo -e "${BCyan} S P A C E  S H I P${BYellow} <-- ${NC}"
+echo -e "${BCyan}   S P A C E  S H I P${BYellow} <------------------ ${NC}"
 git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
 ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
