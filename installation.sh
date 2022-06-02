@@ -45,72 +45,86 @@ echo -e "${BCyan} ++++++++++++++++++++++++++++++++++++++++++++++"
 echo -e "${BYellow}   ||||||||||||||||||||||||||||||||||||||||||"
 echo ""
 
-# ---> Install SPACESHIP
-sudo rm -rf /themes/spaceship.zsh-theme
-sudo rm -rf /themes/spaceship-prompt
-echo -e "${BCyan}   S P A C E  S H I P${BYellow} <------------------ ${NC}"
-sudo git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
-sudo ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
-# ---> Install OH-MY-ZSH
-rm -rf /home/ema/.oh-my-zsh
-echo -e "${BCyan}   O H  M Y  Z S H ${BYellow} <------------------ ${NC}"
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" --unattended
-# ---> Copy ZSH.CONF
-echo -e "${BCyan}   C O P Y  ZSH.CONF ${BYellow} <------------------ ${NC}"
-cp .zshrc ~/.zshrc
-exit
-
 # ---> Update the System
-echo -e "${BCyan}   sudo pacman -Syyuu $y ${BYellow} <------------------ ${NC}"
+echo -e "${BCyan}   U P D A T I N G  T H E  S Y S T E M ${BYellow} <------------------ ${NC}"
 sudo pacman -Syyuu $y
+
 # ---> Install ZSH
-echo -e "${BCyan}   sudo pacman -S zsh $y ${BYellow} <------------------ ${NC}"
+echo -e "${BCyan}   I N S T A L L I N G  // zsh ${BYellow} <------------------ ${NC}"
 sudo pacman -S zsh $y
+
 # ---> Install ZSH-AUTOSUGGESTIONS
-echo -e "${BCyan}   sudo pacman -S zsh-autosuggestions $y ${BYellow} <------------------ ${NC}"
+echo -e "${BCyan}   I N S T A L L I N G // zsh-autosuggestions ${BYellow} <------------------ ${NC}"
 sudo pacman -S zsh-autosuggestions $y
+
 # ---> Install CURL
-echo -e "${BCyan}   sudo pacman -S curl $y ${BYellow} <------------------ ${NC}"
+echo -e "${BCyan}   I N S T A L L I N G // curl ${BYellow} <------------------ ${NC}"
 sudo pacman -S curl $y
+
 # ---> Install GIT
-echo -e "${BCyan}   sudo pacman -S git $y ${BYellow} <------------------ ${NC}"
+echo -e "${BCyan}   I N S T A L L I N G // git ${BYellow} <------------------ ${NC}"
 sudo pacman -S git $y
+
 # ---> Install DOCKER
-echo -e "${BCyan}   sudo pacman -S docker $y ${BYellow} <------------------ ${NC}"
+echo -e "${BCyan}   I N S T A L L I N G // docker ${BYellow} <------------------ ${NC}"
 sudo pacman -S docker $y
+
 # ---> Install FIREFOX
-echo -e "${BCyan}   sudo pacman -S firefox $y ${BYellow} <------------------ ${NC}"
+echo -e "${BCyan}   I N S T A L L I N G // firefox ${BYellow} <------------------ ${NC}"
 sudo pacman -S firefox $y
+
 # ---> Install VSCODE
-echo -e "${BCyan}   sudo pacman -S code $y ${BYellow} <------------------ ${NC}"
+echo -e "${BCyan}   I N S T A L L I N G // code ${BYellow} <------------------ ${NC}"
 sudo pacman -S code $y
+
 # ---> Install GOLANG
-echo -e "${BCyan}   sudo pacman -S go $y ${BYellow} <------------------ ${NC}"
+echo -e "${BCyan}   I N S T A L L I N G // go ${BYellow} <------------------ ${NC}"
 sudo pacman -S go $y
+
 # ---> Install GNOME-TWEAKS
-echo -e "${BCyan}   sudo pacman -S gnome-tweaks $y ${BYellow} <------------------ ${NC}"
+echo -e "${BCyan}   I N S T A L L I N G // gnome-tweaks ${BYellow} <------------------ ${NC}"
 sudo pacman -S gnome-tweaks $y
+
 # ---> Install PAPIRUS-ICONS
-echo -e "${BCyan}   sudo pacman -S papirus-icon-theme $y ${BYellow} <------------------ ${NC}"
+echo -e "${BCyan}   I N S T A L L I N G // papirus-icon-theme ${BYellow} <------------------ ${NC}"
 sudo pacman -S papirus-icon-theme $y
+
 # ---> Install BASE-LEVEL
-echo -e "${BCyan}   sudo pacman -S --needed base-devel ${BYellow} <------------------ ${NC}"
+echo -e "${BCyan}   I N S T A L L I N G // base-devel ${BYellow} <------------------ ${NC}"
 sudo pacman -S --needed base-devel
 
 # ---> Install PARU
-echo -e "${BCyan}   git clone https://aur.archlinux.org/paru.git /tmp/paru ${BYellow} <------------------ ${NC}"
+echo -e "${BCyan}   I N S T A L L I N G // paru ${BYellow} <------------------ ${NC}"
 git clone https://aur.archlinux.org/paru.git /tmp/paru
 cd /tmp/paru
 echo -e "${BCyan}   makepkg -si $y ${BYellow} <------------------ ${NC}"
 makepkg -si $y
 echo -e "${BCyan}   rm -rf /tmp/paru ${BYellow} <------------------ ${NC}"
 rm -rf /tmp/paru
+
 # ---> Update PARU
-echo -e "${BCyan}   paru ${BYellow} <------------------ ${NC}"
+echo -e "${BCyan}   U P D A T E  paru // ${BYellow} <------------------ ${NC}"
 paru
+
 # ---> Install DBVISUALIZER
-echo -e "${BCyan}   paru -S dbvisualizer $y ${BYellow} <------------------ ${NC}"
+echo -e "${BCyan}   I N S T A L L I N G // dbvisualizer ${BYellow} <------------------ ${NC}"
 paru -S dbvis $y
+
 # ---> Install SPOTIFY
-echo -e "${BCyan}   paru -S spotify $y ${BYellow} <------------------ ${NC}"
+echo -e "${BCyan}   I N S T A L L I N G // spotify ${BYellow} <------------------ ${NC}"
 paru -S spotify $y
+
+# ---> Install SPACESHIP
+sudo rm -rf /themes/spaceship.zsh-theme
+sudo rm -rf /themes/spaceship-prompt
+cd /home/ema/insalation
+echo -e "${BCyan}   I N S T A L L I N G // spaceship ${BYellow} <------------------ ${NC}"
+sudo git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
+sudo ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
+
+# ---> Install OH-MY-ZSH
+sudo rm -rf /home/ema/.oh-my-zsh
+sudo rm -rf ~/.zshrc.pre-oh-my-zsh
+sudo rm -rf /home/ema/.zshrc.pre-oh-my-zsh
+echo -e "${BCyan}   I N S T A L L I N G // ohmyzsh ${BYellow} <------------------ ${NC}"
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
