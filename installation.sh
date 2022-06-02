@@ -54,10 +54,10 @@ sudo ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTO
 # ---> Install OH-MY-ZSH
 rm -rf /home/ema/.oh-my-zsh
 echo -e "${BCyan}   O H  M Y  Z S H ${BYellow} <------------------ ${NC}"
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" --noconfirm
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" --unattended
 # ---> Copy ZSH.CONF
 echo -e "${BCyan}   C O P Y  ZSH.CONF ${BYellow} <------------------ ${NC}"
-mv .zshrc ~/.zshrc
+cp .zshrc ~/.zshrc
 exit
 
 # ---> Update the System
